@@ -2,12 +2,14 @@
 title: 用 Astro + Fuwari 重做博客
 published: 2026-11-07
 description: 从 Node 后台换到静态站，记录一次不太折腾的迁移。
-image: /uploads/cover-2.webp
-tags: ["Astro", "建站", "前端"]
+image: /uploads/mw8zu7fc-m9gcgtzt.png
+tags:
+  - Astro
+  - 建站
+  - 前端
 category: 技术
 draft: false
 ---
-
 之前那个博客是自己用 Node 写的一套后台：本地跑服务，写 Markdown，上传图片，再导出一份静态站推到 GitHub Pages。能用，但每次写作都要先 `node server.js`，换台设备就没法写。
 
 这次换成了 **Astro + Fuwari**：内容是仓库里的 Markdown，编辑交给 Pages CMS，构建和部署交给 GitHub Actions。
@@ -54,9 +56,12 @@ export default defineConfig({
 
 静态站没有服务端，所以评论、访问统计这些要么接第三方，要么不要。我倾向于先不要：先把内容写起来，再考虑这些。
 
+
 | 需求 | 方案 |
-| --- | --- |
+| --- | -------------------- |
 | 写作 | Pages CMS（浏览器里编辑） |
 | 图片 | 上传到 `public/uploads` |
 | 发布 | GitHub Actions 自动构建 |
 | 搜索 | Pagefind（构建时生成索引） |
+
+
