@@ -23,6 +23,11 @@ export type SiteConfig = {
 	banner: {
 		enable: boolean;
 		src: string;
+		video?: {
+			enable: boolean;
+			src: string;
+			webm?: string;
+		};
 		position?: "top" | "center" | "bottom";
 		credit: {
 			enable: boolean;

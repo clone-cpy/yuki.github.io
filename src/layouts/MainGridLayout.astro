@@ -8,6 +8,7 @@ import { Icon } from "astro-icon/components";
 import ImageWrapper from "../components/misc/ImageWrapper.astro";
 import TOC from "../components/widget/TOC.astro";
 import { siteConfig } from "../config";
+import { url } from "../utils/url-utils";
 import {
 	BANNER_HEIGHT,
 	BANNER_HEIGHT_EXTEND,
@@ -53,11 +54,38 @@ const mainPanelTop = siteConfig.banner.enable
 
 <!-- Banner -->
 {siteConfig.banner.enable && <div id="banner-wrapper" class={`absolute z-10 w-full transition duration-700 overflow-hidden`} style={`top: -${BANNER_HEIGHT_EXTEND}vh`}>
-    <ImageWrapper id="banner" alt="Banner image of the blog" class:list={["object-cover h-full transition duration-700 opacity-0 scale-105"]}
-                  src={siteConfig.banner.src} position={siteConfig.banner.position}
-    >
-    </ImageWrapper>
+    {siteConfig.banner.video?.enable && siteConfig.banner.video.src ? (
+      <div id="banner" class="relative h-full w-full overflow-hidden transition duration-700 opacity-0 scale-105 pointer-events-none">
+        <video
+          class="h-full w-full object-cover"
+          poster={url(siteConfig.banner.src)}
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          disablepictureinpicture
+          aria-hidden="true"
+        >
+          {siteConfig.banner.video.webm && <source src={url(siteConfig.banner.video.webm)} type="video/webm" />}
+          {siteConfig.banner.video.src && <source src={url(siteConfig.banner.video.src)} type={siteConfig.banner.video.src.endsWith(".webm") ? "video/webm" : "video/mp4"} />}
+        </video>
+      </div>
+    ) : (
+      <ImageWrapper id="banner" alt="Banner image of the blog" class:list={["object-cover h-full transition duration-700 opacity-0 scale-105"]}
+                    src={siteConfig.banner.src} position={siteConfig.banner.position}
+      >
+      </ImageWrapper>
+    )}
 </div>}
+
+{siteConfig.banner.enable && siteConfig.banner.video?.enable && <script is:inline>
+  (function () {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.querySelectorAll("#banner video").forEach(function (video) { video.pause(); });
+    }
+  })();
+</script>}
 
 <!-- Main content -->
 <div class="absolute w-full z-30 pointer-events-none" style={`top: ${mainPanelTop}`}>

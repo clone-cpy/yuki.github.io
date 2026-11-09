@@ -20,8 +20,15 @@
 3. 正文用富文本 / Markdown 写，图片直接上传（会存到 `public/uploads/`）
 4. 保存后会自动提交到仓库，约 1 分钟后线上更新
 
-「站点设置」里可以改：站点名称、副标题、主题色、是否显示横幅、横幅图、头像、昵称、简介。
+「站点设置」里可以改：站点名称、副标题、主题色、是否显示横幅、横幅图/视频、头像、昵称、简介。
 保存后同样会自动构建发布。导航菜单、社交链接等高级项仍在 `src/config.ts`。
+
+### 横幅视频
+
+- 支持 MP4（H.264）和 WebM（VP9），建议 5–10 秒、无声、≤5MB
+- 后台上传后打开「使用横幅视频」开关即可；横幅图片会作为视频封面和兜底
+- 同时提供 MP4 + WebM 时优先用 WebM（体积更小），Safari 会自动回退到 MP4
+- 访客开启「减少动态效果」时会自动暂停视频
 
 ### 方式二：本地
 
@@ -73,7 +80,7 @@ corepack pnpm preview --port 4400
 | 导航菜单、社交链接、favicon、目录深度 | `src/config.ts` |
 | 关于页 | `src/content/spec/about.md` |
 | 文章 | `src/content/posts/*.md` |
-| 图片 | `public/uploads/` |
+| 图片 / 视频 | `public/uploads/`（横幅视频：`banner.mp4` / `banner.webm`） |
 | 主题样式细节 | `src/styles/`、`src/components/` |
 | Pages CMS 表单字段 | `.pages.yml` |
 

@@ -6,5 +6,8 @@
   "bannerImage": "/uploads/banner.webp",
   "profileName": "nzh",
   "profileBio": "写代码，也写一点文字。",
-  "profileAvatar": "/uploads/avatar.webp"
+  "profileAvatar": "/uploads/avatar.webp",
+  "bannerVideoEnabled": true,
+  "bannerVideo": "/uploads/banner.mp4",
+  "bannerVideoWebm": "/uploads/banner.webm"
 }

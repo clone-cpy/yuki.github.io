@@ -19,6 +19,11 @@ export const siteConfig: SiteConfig = {
 	banner: {
 		enable: Boolean(site.bannerEnabled),
 		src: site.bannerImage, // 以 / 开头表示相对于 public 目录
+		video: {
+			enable: Boolean(site.bannerVideoEnabled),
+			src: site.bannerVideo || "",
+			webm: site.bannerVideoWebm || "",
+		},
 		position: "center",
 		credit: {
 			enable: false,
