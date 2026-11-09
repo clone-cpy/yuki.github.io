@@ -1,6 +1,6 @@
 ---
 title: 开一篇新博客
-published: 2026-11-08
+published: 2026-11-09
 description: 换了个新家，也换了一种记录方式。
 image: /uploads/mw8zvt6x-2jwwml9d.png
 tags:
