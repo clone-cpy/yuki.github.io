@@ -6,18 +6,19 @@ import type {
 	SiteConfig,
 } from "./types/config";
 import { LinkPreset } from "./types/config";
+import site from "./site.json";
 
 export const siteConfig: SiteConfig = {
-	title: "林间小筑",
-	subtitle: "nzh 的个人博客",
+	title: site.title,
+	subtitle: site.subtitle,
 	lang: "zh_CN", // 中文界面；可选 en / zh_TW / ja / ko 等
 	themeColor: {
-		hue: 250, // 默认主题色（0-360），访客也可以自己换
+		hue: Number(site.themeHue), // 默认主题色（0-360），访客也可以自己换
 		fixed: false, // true 则隐藏访客的主题色选择器
 	},
 	banner: {
-		enable: true,
-		src: "/uploads/banner.webp", // 以 / 开头表示相对于 public 目录
+		enable: Boolean(site.bannerEnabled),
+		src: site.bannerImage, // 以 / 开头表示相对于 public 目录
 		position: "center",
 		credit: {
 			enable: false,
@@ -55,9 +56,9 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "/uploads/avatar.webp",
-	name: "nzh",
-	bio: "写代码，也写一点文字。",
+	avatar: site.profileAvatar,
+	name: site.profileName,
+	bio: site.profileBio,
 	links: [
 		{
 			name: "GitHub",

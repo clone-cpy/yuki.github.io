@@ -5,6 +5,39 @@ media:
   categories: [image]
 
 content:
+  - name: site
+    label: 站点设置
+    type: file
+    path: src/site.json
+    format: json
+    fields:
+      - name: title
+        label: 站点名称
+        type: string
+        required: true
+      - name: subtitle
+        label: 副标题
+        type: string
+      - name: themeHue
+        label: 主题色 Hue（0-360，250 是蓝紫）
+        type: number
+      - name: bannerEnabled
+        label: 显示横幅
+        type: boolean
+        default: true
+      - name: bannerImage
+        label: 横幅图片
+        type: image
+      - name: profileName
+        label: 昵称
+        type: string
+      - name: profileBio
+        label: 简介
+        type: text
+      - name: profileAvatar
+        label: 头像
+        type: image
+
   - name: posts
     label: 文章
     type: collection

@@ -20,6 +20,9 @@
 3. 正文用富文本 / Markdown 写，图片直接上传（会存到 `public/uploads/`）
 4. 保存后会自动提交到仓库，约 1 分钟后线上更新
 
+「站点设置」里可以改：站点名称、副标题、主题色、是否显示横幅、横幅图、头像、昵称、简介。
+保存后同样会自动构建发布。导航菜单、社交链接等高级项仍在 `src/config.ts`。
+
 ### 方式二：本地
 
 ```bash
@@ -66,7 +69,8 @@ corepack pnpm preview --port 4400
 
 | 想改什么 | 改哪里 |
 | --- | --- |
-| 站点名、副标题、导航、头像、横幅、主题色 | `src/config.ts` |
+| 站点名、副标题、头像、横幅、主题色、昵称、简介 | `src/site.json`（Pages CMS「站点设置」） |
+| 导航菜单、社交链接、favicon、目录深度 | `src/config.ts` |
 | 关于页 | `src/content/spec/about.md` |
 | 文章 | `src/content/posts/*.md` |
 | 图片 | `public/uploads/` |
@@ -78,6 +82,7 @@ corepack pnpm preview --port 4400
 ```text
 .
 ├── src/
+│   ├── site.json           # 站点信息（Pages CMS 可编辑）
 │   ├── config.ts           # 站点配置
 │   ├── content/posts/      # 文章
 │   ├── content/spec/       # 关于页
