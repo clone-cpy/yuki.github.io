@@ -9,7 +9,7 @@ content:
     label: 文章
     type: collection
     path: src/content/posts
-    filename: "{year}-{month}-{day}-{primary}.md"
+    filename: "{primary}.md"
     view:
       fields: [title, published, draft]
       primary: title
