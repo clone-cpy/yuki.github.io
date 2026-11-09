@@ -1,13 +1,11 @@
 {
   "title": "林间小筑",
-  "subtitle": "nzh 的个人博客",
+  "subtitle": "yuki的个人博客",
   "themeHue": 250,
   "bannerEnabled": true,
   "bannerImage": "/uploads/mw8zrzsm-mo6jinrf.jpg",
   "bannerVideoEnabled": false,
-  "bannerVideo": "/uploads/banner.mp4",
-  "bannerVideoWebm": "/uploads/banner.webm",
-  "profileName": "nzh",
+  "profileName": "yuki",
   "profileBio": "写代码，也写一点文字。",
   "profileAvatar": "/uploads/mw8za182-oqdv1fty.png"
 }
