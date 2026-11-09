@@ -1,0 +1,62 @@
+media:
+  input: public/uploads
+  output: /uploads
+  rename: random
+  categories: [image]
+
+content:
+  - name: posts
+    label: 文章
+    type: collection
+    path: src/content/posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, published, draft]
+      primary: title
+      sort: [published, title]
+      default:
+        sort: published
+        order: desc
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: published
+        label: 发布日期
+        type: date
+        required: true
+      - name: description
+        label: 摘要
+        type: text
+      - name: image
+        label: 封面图
+        type: image
+        options:
+          categories: [image]
+      - name: tags
+        label: 标签
+        type: string
+        list: true
+      - name: category
+        label: 分类
+        type: string
+      - name: draft
+        label: 草稿
+        type: boolean
+        default: false
+      - name: body
+        label: 正文
+        type: rich-text
+
+  - name: about
+    label: 关于页
+    type: file
+    path: src/content/spec/about.md
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: body
+        label: 正文
+        type: rich-text
