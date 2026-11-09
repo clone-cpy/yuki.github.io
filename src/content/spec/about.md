@@ -1,7 +1,6 @@
 ---
 title: 关于
 ---
-
 我是 **nzh**，一名工程师，平时写代码，也写一点文字。
 
 喜欢把复杂的问题拆解成简单的部分，也喜欢把简单的东西做得足够精致。工作之外，我阅读、拍照，偶尔煮一杯不太成功的咖啡。
@@ -19,4 +18,4 @@ title: 关于
 ## 找到我
 
 - GitHub：[clone-cpy](https://github.com/clone-cpy)
-- RSS：[订阅更新](https://clone-cpy.github.io/yuki.github.io/rss.xml)
+
