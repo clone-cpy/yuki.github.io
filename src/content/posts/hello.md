@@ -2,12 +2,13 @@
 title: 开一篇新博客
 published: 2026-11-09
 description: 换了个新家，也换了一种记录方式。
-image: /uploads/cover-1.webp
-tags: ["随笔", "博客"]
+image: /uploads/mw8zvt6x-2jwwml9d.png
+tags:
+  - 随笔
+  - 博客
 category: 随笔
 draft: false
 ---
-
 换了个新主题，也换了一种记录方式。
 
 这个博客现在跑在 GitHub Pages 上：写作在浏览器里完成，图片上传后自动进仓库，提交之后 GitHub Actions 负责构建和发布。不再需要开着一台电脑挂着后台。
