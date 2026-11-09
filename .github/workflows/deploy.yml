@@ -38,6 +38,15 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Enable Pages (best effort)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow \
+            || gh api -X PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow \
+            || true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
