@@ -31,7 +31,22 @@
 - 同时提供 MP4 + WebM 时优先用 WebM（体积更小），Safari 会自动回退到 MP4
 - 访客开启「减少动态效果」时会自动暂停视频
 
-### 方式二：本地
+### 方式二：导入现成的 Markdown
+
+Pages CMS 没有直接上传 `.md` 的按钮，但可以把文件导进仓库：
+
+```bash
+corepack pnpm post:import ./我的文章.md
+corepack pnpm post:import a.md b.md --publish   # 导入并自动提交发布
+```
+
+- 没有 frontmatter 会自动补：标题取第一个 `#`，日期取今天，摘要取第一段
+- 正文里的相对路径图片会复制到 `public/uploads/`，并改写成 `/uploads/...`
+- `--slug=xxx` 指定链接，`--force` 覆盖同名文章
+- 也可以手动把 `.md` 放进 `src/content/posts/`（自己写 frontmatter），提交后自动构建
+- 通过 GitHub 网页上传也可以：仓库 → `src/content/posts` → Add file → Upload files
+
+### 方式三：本地开发
 
 ```bash
 corepack pnpm install
@@ -95,6 +110,7 @@ corepack pnpm preview --port 4400
 │   ├── content/posts/      # 文章
 │   ├── content/spec/       # 关于页
 │   └── plugins/            # 自定义插件（含 base 路径处理）
+├── scripts/import-post.mjs # 导入 Markdown 文章
 ├── public/uploads/         # 图片
 ├── .pages.yml              # Pages CMS 配置
 ├── .github/workflows/      # 自动部署
