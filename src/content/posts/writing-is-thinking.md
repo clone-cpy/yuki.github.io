@@ -2,12 +2,13 @@
 title: 写作是另一种思考
 published: 2026-11-03
 description: 当你试图把想法写清楚的时候，才会发现自己其实并没有想清楚。
-image: /uploads/cover-3.webp
-tags: ["随笔", "写作"]
+image: /uploads/mw8zvez9-is9ytgw6.png
+tags:
+  - 随笔
+  - 写作
 category: 随笔
 draft: false
 ---
-
 有段时间我以为自己「想明白了」很多问题：性能优化的取舍、组件抽象的边界、要不要写测试。直到试着把它们写成文章，才发现脑子里那些流畅的句子，落到纸面上全是漏洞。
 
 ## 写作会暴露模糊
